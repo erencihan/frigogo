@@ -1,0 +1,38 @@
+.how__steps {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+  counter-reset: none;
+}
+
+.how__steps li {
+  max-width: 36ch;
+}
+
+.how__n {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--ice-deep);
+  margin-bottom: 0.5rem;
+}
+
+.how__steps h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.how__steps p {
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .how__steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}

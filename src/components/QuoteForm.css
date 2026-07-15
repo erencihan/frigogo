@@ -1,0 +1,90 @@
+.quote {
+  background:
+    linear-gradient(165deg, var(--bg-deep) 0%, var(--bg-mid) 55%, #0f2a38 100%);
+  color: #fff;
+}
+
+.quote .section-label {
+  color: var(--ice);
+}
+
+.quote .section-lead {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.quote__layout {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.quote__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.quote__row {
+  display: grid;
+  gap: 1rem;
+}
+
+.quote__form label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quote__form input,
+.quote__form select,
+.quote__form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.quote__form input::placeholder,
+.quote__form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.quote__form input:focus,
+.quote__form select:focus,
+.quote__form textarea:focus {
+  outline: none;
+  border-color: var(--ice);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.quote__form select option {
+  color: var(--text);
+}
+
+.quote__submit {
+  justify-self: start;
+  margin-top: 0.5rem;
+  background: var(--ice);
+  color: var(--bg-deep);
+}
+
+.quote__submit:hover {
+  background: #74d4ef;
+}
+
+@media (min-width: 720px) {
+  .quote__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .quote__layout {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+    gap: 4rem;
+  }
+}
