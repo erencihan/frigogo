@@ -8,6 +8,21 @@ const shots = [
     caption: "Dikkatli yükleme",
   },
   {
+    src: "/images/frigo-van-4.png",
+    alt: "Frigolu panelvan tarzı ticari araç — örnek görsel",
+    caption: "Dikkatli yükleme",
+  },
+  {
+    src: "/images/frigo-van-4.png",
+    alt: "Frigolu panelvan tarzı ticari araç — örnek görsel",
+    caption: "Dikkatli yükleme",
+  },
+  {
+    src: "/images/frigo-van-4.png",
+    alt: "Frigolu panelvan tarzı ticari araç — örnek görsel",
+    caption: "Dikkatli yükleme",
+  },
+  {
     src: "/images/frigo-van-1.png",
     alt: "Yükleme sırasında soğuk ürünler — örnek taşıma",
     caption: "Frigolu panelvan",
