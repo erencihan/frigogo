@@ -1,6 +1,8 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { Services } from "./components/Services";
+import { Coverage } from "./components/Coverage";
+import { Fleet } from "./components/Fleet";
+import { WhyUs } from "./components/WhyUs";
 import { Gallery } from "./components/Gallery";
 import { HowItWorks } from "./components/HowItWorks";
 import { QuoteForm } from "./components/QuoteForm";
@@ -14,7 +16,9 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Services />
+        <Coverage />
+        <Fleet />
+        <WhyUs />
         <Gallery />
         <HowItWorks />
         <QuoteForm />

@@ -9,6 +9,7 @@ type FormState = {
   from: string;
   to: string;
   cargo: string;
+  vehicle: string;
   temperature: string;
   date: string;
   note: string;
@@ -20,20 +21,22 @@ const initial: FormState = {
   from: "",
   to: "",
   cargo: "",
-  temperature: "",
+  vehicle: "",
+  temperature: "−18 °C (donuk)",
   date: "",
   note: "",
 };
 
 function buildMessage(data: FormState): string {
   const lines = [
-    `Merhaba ${siteConfig.brand}, fiyat teklifi istiyorum.`,
+    `Merhaba ${siteConfig.brand}, 81 il donuk nakliye teklifi istiyorum.`,
     `Ad: ${data.name}`,
     `Tel: ${data.phone}`,
     `Kalkış: ${data.from} → Varış: ${data.to}`,
     `Yük: ${data.cargo}`,
   ];
 
+  if (data.vehicle) lines.push(`Araç: ${data.vehicle}`);
   if (data.temperature) lines.push(`Sıcaklık: ${data.temperature}`);
   if (data.date) lines.push(`Tarih: ${data.date}`);
   if (data.note.trim()) lines.push(`Not: ${data.note.trim()}`);
@@ -54,8 +57,7 @@ export function QuoteForm() {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const url = whatsappUrl(buildMessage(form));
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(whatsappUrl(buildMessage(form)), "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -63,13 +65,14 @@ export function QuoteForm() {
       <div className="container quote__layout">
         <div className="quote__intro">
           <span className="section-label">Fiyat teklifi</span>
-          <h2 className="section-title">Yükünüz için hemen fiyat alın.</h2>
+          <h2 className="section-title">Donuk yükünüz için fiyat alın.</h2>
           <p className="section-lead">
-            Formu gönderince WhatsApp’ta hazır bir mesaj açılır. Dakikalar içinde dönüş yaparız.
+            Formu gönderince WhatsApp’ta hazır mesaj açılır. İl, araç ve sıcaklık bilginizle
+            dakikalar içinde dönüş yaparız.
           </p>
         </div>
 
-        <form className="quote__form" onSubmit={onSubmit} noValidate>
+        <form className="quote__form" onSubmit={onSubmit}>
           <div className="quote__row">
             <label>
               Ad soyad
@@ -99,25 +102,25 @@ export function QuoteForm() {
 
           <div className="quote__row">
             <label>
-              Kalkış
+              Kalkış ili / ilçe
               <input
                 name="from"
                 type="text"
                 required
                 value={form.from}
                 onChange={onChange}
-                placeholder="Örn. İstanbul / Kadıköy"
+                placeholder="Örn. İstanbul"
               />
             </label>
             <label>
-              Varış
+              Varış ili / ilçe
               <input
                 name="to"
                 type="text"
                 required
                 value={form.to}
                 onChange={onChange}
-                placeholder="Örn. Ankara / Çankaya"
+                placeholder="Örn. Van, Antalya, Samsun..."
               />
             </label>
           </div>
@@ -131,38 +134,52 @@ export function QuoteForm() {
                 required
                 value={form.cargo}
                 onChange={onChange}
-                placeholder="Örn. süt ürünü, dondurulmuş et"
+                placeholder="Örn. dondurulmuş et, dondurma, ilaç"
               />
             </label>
             <label>
-              Sıcaklık (opsiyonel)
-              <select name="temperature" value={form.temperature} onChange={onChange}>
-                <option value="">Belirtmek istemiyorum</option>
-                <option value="+2 / +8 °C (taze)">+2 / +8 °C (taze)</option>
-                <option value="0 / +4 °C (soğuk)">0 / +4 °C (soğuk)</option>
-                <option value="-18 °C (donuk)">−18 °C (donuk)</option>
-                <option value="Diğer">Diğer</option>
+              Araç boyu
+              <select name="vehicle" value={form.vehicle} onChange={onChange} required>
+                <option value="" disabled>
+                  Seçin
+                </option>
+                <option value="Frigolu Panelvan / Doblo">Frigolu Panelvan / Doblo</option>
+                <option value="Frigolu Kamyonet">Frigolu Kamyonet</option>
+                <option value="Frigolu Kamyon">Frigolu Kamyon</option>
+                <option value="Frigolu TIR">Frigolu TIR</option>
+                <option value="Emin değilim — siz önerin">Emin değilim — siz önerin</option>
               </select>
             </label>
           </div>
 
-          <label>
-            Taşıma tarihi (opsiyonel)
-            <input name="date" type="date" value={form.date} onChange={onChange} />
-          </label>
+          <div className="quote__row">
+            <label>
+              Sıcaklık rejimi
+              <select name="temperature" value={form.temperature} onChange={onChange}>
+                <option value="−18 °C (donuk)">−18 °C (donuk)</option>
+                <option value="0 / +4 °C (soğuk)">0 / +4 °C (soğuk)</option>
+                <option value="+2 / +8 °C (taze)">+2 / +8 °C (taze)</option>
+                <option value="Diğer / netleştirelim">Diğer / netleştirelim</option>
+              </select>
+            </label>
+            <label>
+              Taşıma tarihi
+              <input name="date" type="date" value={form.date} onChange={onChange} />
+            </label>
+          </div>
 
           <label>
-            Not (opsiyonel)
+            Not (palet, kg, özel talep)
             <textarea
               name="note"
               rows={3}
               value={form.note}
               onChange={onChange}
-              placeholder="Palet sayısı, hacim veya özel talebiniz..."
+              placeholder="Palet sayısı, hacim veya teslim saati..."
             />
           </label>
 
-          <button type="submit" className="btn btn-dark quote__submit">
+          <button type="submit" className="btn quote__submit">
             WhatsApp ile teklif iste
           </button>
         </form>

@@ -1,6 +1,6 @@
 .quote {
   background:
-    linear-gradient(165deg, var(--bg-deep) 0%, var(--bg-mid) 55%, #0f2a38 100%);
+    linear-gradient(165deg, var(--night) 0%, var(--night-2) 48%, #0e2430 100%);
   color: #fff;
 }
 
@@ -31,25 +31,27 @@
   display: grid;
   gap: 0.4rem;
   font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .quote__form input,
 .quote__form select,
 .quote__form textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 0.35rem;
+  padding: 0.88rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
 .quote__form input::placeholder,
 .quote__form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.38);
 }
 
 .quote__form input:focus,
@@ -66,13 +68,13 @@
 
 .quote__submit {
   justify-self: start;
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   background: var(--ice);
-  color: var(--bg-deep);
+  color: var(--night);
 }
 
 .quote__submit:hover {
-  background: #74d4ef;
+  background: var(--ice-bright);
 }
 
 @media (min-width: 720px) {
@@ -83,7 +85,7 @@
 
 @media (min-width: 960px) {
   .quote__layout {
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 0.88fr 1.12fr;
     align-items: start;
     gap: 4rem;
   }

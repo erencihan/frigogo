@@ -3,12 +3,11 @@
   margin: 3rem 0 0;
   padding: 0;
   display: grid;
-  gap: 2rem;
-  counter-reset: none;
+  gap: 2.15rem;
 }
 
 .how__steps li {
-  max-width: 36ch;
+  max-width: 34ch;
 }
 
 .how__n {
@@ -16,23 +15,25 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  color: var(--ice-deep);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin-bottom: 0.55rem;
 }
 
 .how__steps h3 {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
+  font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
 .how__steps p {
-  color: var(--text-muted);
+  color: var(--text-soft);
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
   .how__steps {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2.75rem;
   }
 }

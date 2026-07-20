@@ -1,6 +1,6 @@
 export const siteConfig = {
   brand: "FrigoGo",
-  tagline: "Soğuk zincir, hızlı yol.",
+  tagline: "81 ile donuk ürün. Kesintisiz soğuk zincir.",
   phoneDisplay: "+90 530 997 99 38",
   phoneHref: "tel:+905309979938",
   email: "info@frigogo.com",
@@ -13,3 +13,22 @@ export function whatsappUrl(text?: string): string {
   if (!text) return base;
   return `${base}?text=${encodeURIComponent(text)}`;
 }
+
+export const provincesSample = [
+  "İstanbul",
+  "Ankara",
+  "İzmir",
+  "Bursa",
+  "Antalya",
+  "Adana",
+  "Konya",
+  "Gaziantep",
+  "Kayseri",
+  "Trabzon",
+  "Samsun",
+  "Diyarbakır",
+  "Van",
+  "Erzurum",
+  "Mersin",
+  "Eskişehir",
+];

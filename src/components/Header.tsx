@@ -3,10 +3,11 @@ import { siteConfig } from "../siteConfig";
 import "./Header.css";
 
 const links = [
-  { href: "#hizmetler", label: "Hizmetler" },
-  { href: "#galeri", label: "Araçlar" },
-  { href: "#nasil", label: "Nasıl çalışır" },
-  { href: "#teklif", label: "Teklif al" },
+  { href: "#kapsama", label: "81 il" },
+  { href: "#filo", label: "Filo" },
+  { href: "#neden", label: "Neden biz" },
+  { href: "#galeri", label: "Taşıma" },
+  { href: "#teklif", label: "Teklif" },
   { href: "#iletisim", label: "İletişim" },
 ];
 

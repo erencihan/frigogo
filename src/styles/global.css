@@ -1,24 +1,25 @@
 :root {
-  --bg: #f4f8fb;
-  --bg-deep: #0b1f2a;
-  --bg-mid: #143344;
-  --surface: #ffffff;
-  --text: #0b1f2a;
-  --text-muted: #4a6573;
-  --ice: #5ec8e8;
-  --ice-deep: #2a9fb8;
-  --steel: #1a3544;
-  --line: rgba(11, 31, 42, 0.1);
-  --shadow-soft: 0 20px 50px rgba(11, 31, 42, 0.12);
+  --night: #050d14;
+  --night-2: #0a1a24;
+  --night-3: #122a38;
+  --frost: #f2f7fa;
+  --mist: #d7e6ee;
+  --text: #07131b;
+  --text-soft: #4d6573;
+  --ice: #3ec8e8;
+  --ice-bright: #6ad8f2;
+  --teal: #2cb8a3;
+  --line: rgba(7, 19, 27, 0.1);
+  --line-light: rgba(255, 255, 255, 0.12);
 
-  --font-display: "Syne", sans-serif;
-  --font-body: "Outfit", sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "Figtree", sans-serif;
 
-  --space-section: clamp(4.5rem, 10vw, 7rem);
-  --container: min(1120px, calc(100% - 2.5rem));
-  --header-h: 4.25rem;
-
+  --space-section: clamp(4.75rem, 11vw, 8rem);
+  --container: min(1180px, calc(100% - 2.25rem));
+  --header-h: 4.35rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius: 0.4rem;
 }
 
 *,
@@ -36,9 +37,9 @@ body {
   font-family: var(--font-body);
   color: var(--text);
   background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(94, 200, 232, 0.18), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(42, 159, 184, 0.12), transparent 50%),
-    linear-gradient(180deg, #e8f2f7 0%, var(--bg) 35%, #eef4f8 100%);
+    radial-gradient(ellipse 90% 55% at 0% -5%, rgba(62, 200, 232, 0.16), transparent 50%),
+    radial-gradient(ellipse 70% 45% at 100% 8%, rgba(44, 184, 163, 0.1), transparent 48%),
+    linear-gradient(180deg, #eaf3f7 0%, var(--frost) 28%, #eef5f8 100%);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -64,8 +65,8 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   margin: 0;
 }
 
@@ -89,24 +90,26 @@ p {
 
 .section-label {
   display: block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ice-deep);
-  margin-bottom: 0.75rem;
+  color: var(--teal);
+  margin-bottom: 0.85rem;
 }
 
 .section-title {
-  font-size: clamp(1.85rem, 4vw, 2.75rem);
-  max-width: 18ch;
+  font-size: clamp(2rem, 4.6vw, 3.15rem);
+  max-width: 16ch;
+  font-weight: 800;
 }
 
 .section-lead {
-  margin-top: 1rem;
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  max-width: 42ch;
+  margin-top: 1.05rem;
+  color: var(--text-soft);
+  font-size: 1.08rem;
+  max-width: 44ch;
+  font-weight: 500;
 }
 
 .btn {
@@ -114,18 +117,18 @@ p {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.5rem;
-  border-radius: 0.35rem;
+  padding: 0.95rem 1.55rem;
+  border-radius: var(--radius);
   border: 1px solid transparent;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
   transition:
-    transform 0.25s var(--ease),
-    background 0.25s var(--ease),
-    border-color 0.25s var(--ease),
-    color 0.25s var(--ease),
-    box-shadow 0.25s var(--ease);
+    transform 0.28s var(--ease),
+    background 0.28s var(--ease),
+    border-color 0.28s var(--ease),
+    color 0.28s var(--ease),
+    box-shadow 0.28s var(--ease);
 }
 
 .btn:hover {
@@ -139,17 +142,17 @@ p {
 
 .btn-primary {
   background: var(--ice);
-  color: var(--bg-deep);
+  color: var(--night);
 }
 
 .btn-primary:hover {
-  background: #74d4ef;
-  box-shadow: 0 12px 28px rgba(94, 200, 232, 0.35);
+  background: var(--ice-bright);
+  box-shadow: 0 14px 32px rgba(62, 200, 232, 0.38);
 }
 
 .btn-ghost {
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #fff;
 }
 
@@ -159,20 +162,20 @@ p {
 }
 
 .btn-dark {
-  background: var(--bg-deep);
+  background: var(--night);
   color: #fff;
 }
 
 .btn-dark:hover {
-  background: var(--bg-mid);
+  background: var(--night-3);
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(30px);
   transition:
-    opacity 0.7s var(--ease),
-    transform 0.7s var(--ease);
+    opacity 0.75s var(--ease),
+    transform 0.75s var(--ease);
 }
 
 .reveal.is-visible {

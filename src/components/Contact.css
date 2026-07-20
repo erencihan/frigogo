@@ -5,7 +5,7 @@
   display: grid;
   gap: 0;
   border-top: 1px solid var(--line);
-  max-width: 520px;
+  max-width: 540px;
 }
 
 .contact__list li {
@@ -16,22 +16,23 @@
 }
 
 .contact__list span {
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ice-deep);
+  color: var(--teal);
 }
 
 .contact__list a,
 .contact__list p {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 .contact__list a:hover {
-  color: var(--ice-deep);
+  color: var(--teal);
 }
 
 @media (min-width: 640px) {

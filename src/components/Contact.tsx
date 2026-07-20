@@ -9,9 +9,9 @@ export function Contact() {
     <section id="iletisim" className="section contact reveal" ref={ref}>
       <div className="container">
         <span className="section-label">Bize ulaşın</span>
-        <h2 className="section-title">Hemen yazın veya arayın.</h2>
+        <h2 className="section-title">Donuk sevkiyat için yazın.</h2>
         <p className="section-lead">
-          Teklif, rezervasyon veya acil sevkiyat için doğrudan iletişime geçin.
+          81 ile teklif, acil sevkiyat veya filo sorusu — hemen dönüş.
         </p>
 
         <ul className="contact__list">
@@ -26,7 +26,7 @@ export function Contact() {
           <li>
             <span>WhatsApp</span>
             <a
-              href={whatsappUrl("Merhaba FrigoGo!")}
+              href={whatsappUrl("Merhaba FrigoGo, donuk ürün nakliyesi için yazıyorum.")}
               target="_blank"
               rel="noopener noreferrer"
             >

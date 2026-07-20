@@ -1,0 +1,82 @@
+.coverage {
+  overflow: hidden;
+}
+
+.coverage__head {
+  max-width: 640px;
+}
+
+.coverage__hero-num {
+  margin-top: 2.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  line-height: 0.85;
+}
+
+.coverage__hero-num span {
+  font-size: clamp(6rem, 22vw, 12rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  background: linear-gradient(135deg, var(--night) 20%, var(--teal) 55%, var(--ice) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.coverage__hero-num em {
+  font-style: normal;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-soft);
+  letter-spacing: -0.02em;
+}
+
+.coverage__note {
+  margin-top: 1.25rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  max-width: 48ch;
+}
+
+.coverage__marquee {
+  margin-top: 2.75rem;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  overflow: hidden;
+}
+
+.coverage__track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+
+.coverage__track span {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+  font-weight: 700;
+  color: var(--night-3);
+  white-space: nowrap;
+  opacity: 0.72;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverage__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+    gap: 1rem 1.75rem;
+  }
+}
