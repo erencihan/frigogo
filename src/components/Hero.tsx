@@ -4,15 +4,15 @@ import "./Hero.css";
 export function Hero() {
   return (
     <section id="ust" className="hero" aria-label="FrigoGo tanıtım">
-      <div className="hero__media" aria-hidden="true">
+      <div className="hero__media">
         <img
-          src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=82"
-          alt=""
-          width={2000}
-          height={1250}
+          src="/images/hero-fleet-road.png"
+          alt="Büyükten küçüğe frigolu araçlar yolda yan yana"
+          width={1920}
+          height={1080}
           fetchPriority="high"
         />
-        <div className="hero__shade" />
+        <div className="hero__shade" aria-hidden="true" />
       </div>
 
       <div className="container hero__content">
