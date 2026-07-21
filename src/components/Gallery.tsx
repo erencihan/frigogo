@@ -3,28 +3,24 @@ import "./Gallery.css";
 
 const shots = [
   {
-    src: "https://images.unsplash.com/photo-1578574577315-2f83b998d65b?auto=format&fit=crop&w=1100&q=80",
+    src: "/images/frigo-example1.png",
     alt: "Donuk ürün yükleme örneği",
     caption: "Donuk yükleme",
-    wide: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80",
+    src: "/images/frigo-example2.png",
     alt: "Frigolu araç yolda",
     caption: "Yolda soğuk zincir",
-    wide: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1580674285054-bed31e145f91?auto=format&fit=crop&w=800&q=80",
+    src: "/images/frigo-example4.png",
     alt: "Depo sevkiyatı",
     caption: "Depo teslim",
-    wide: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1100&q=80",
+    src: "/images/frigo-example3.png",
     alt: "Panelvan frigo araç",
     caption: "Panelvan frigo",
-    wide: true,
   },
 ];
 
@@ -45,17 +41,8 @@ export function Gallery() {
 
         <div className="gallery__grid">
           {shots.map((shot) => (
-            <figure
-              key={shot.caption}
-              className={`gallery__item ${shot.wide ? "gallery__item--wide" : ""}`}
-            >
-              <img
-                src={shot.src}
-                alt={shot.alt}
-                width={shot.wide ? 1100 : 800}
-                height={shot.wide ? 700 : 900}
-                loading="lazy"
-              />
+            <figure key={shot.caption} className="gallery__item">
+              <img src={shot.src} alt={shot.alt} loading="lazy" />
               <figcaption>{shot.caption}</figcaption>
             </figure>
           ))}
