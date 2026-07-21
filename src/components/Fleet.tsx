@@ -9,7 +9,7 @@ const fleet = [
     temp: "0 / +4 °C veya −18 °C",
     text: "Market, restoran ve küçük parti donuk sevkiyatlar için çevik çözüm. Dar sokaklara uygun.",
     image:
-      "public/images/frigo-van.png",
+      "images/frigo-van.png",
     alt: "Küçük ticari panelvan araç",
   },
   {
@@ -19,7 +19,7 @@ const fleet = [
     temp: "Çift rejim opsiyonu",
     text: "Paletli donuk ürün ve orta hacimli yüklerde denge: kapasite + manevra.",
     image:
-      "public/images/frigo-kamyonet.png",
+      "images/frigo-kamyonet.png",
     alt: "Orta boy nakliye kamyoneti",
   },
   {
@@ -29,7 +29,7 @@ const fleet = [
     temp: "−18 °C donuk odaklı",
     text: "Depo–depo ve toptan donuk ürün taşımalarında güçlü soğuk zincir.",
     image:
-      "public/images/frigo-kamyon.png",
+      "images/frigo-kamyon.png",
     alt: "Büyük soğutmalı kamyon sevkiyat",
   },
   {
@@ -39,7 +39,7 @@ const fleet = [
     temp: "FRC / ATP uyumlu rejim",
     text: "Yüksek hacimli donuk sevkiyatlarda Türkiye geneli komple araç tahsisi.",
     image:
-      "public/images/frigo-tir.png",
+      "images/frigo-tir.png",
     alt: "Uzun mesafe soğuk zincir sevkiyat",
   },
 ];
