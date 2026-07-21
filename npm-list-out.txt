@@ -1,0 +1,3 @@
+frigogo@1.0.0 C:\Users\LENOVO\OneDrive\Desktop\frigo.com
+`-- react-router-dom@7.18.1
+

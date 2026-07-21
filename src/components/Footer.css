@@ -18,7 +18,16 @@
 
 .footer__copy {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--text-soft);
+}
+
+.footer__copy a {
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.footer__copy a:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 640px) {

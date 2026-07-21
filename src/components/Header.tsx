@@ -1,26 +1,37 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { siteConfig } from "../siteConfig";
 import "./Header.css";
 
-const links = [
-  { href: "#kapsama", label: "81 il" },
-  { href: "#filo", label: "Filo" },
-  { href: "#neden", label: "Neden biz" },
-  { href: "#galeri", label: "Taşıma" },
-  { href: "#teklif", label: "Teklif" },
-  { href: "#iletisim", label: "İletişim" },
+const homeLinks = [
+  { href: "/#kapsama", label: "81 il" },
+  { href: "/#filo", label: "Filo" },
+  { href: "/#blog", label: "Blog" },
+  { href: "/#galeri", label: "Taşıma" },
+  { href: "/#teklif", label: "Teklif" },
+  { href: "/#iletisim", label: "İletişim" },
 ];
 
-export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+type HeaderProps = {
+  variant?: "auto" | "solid";
+};
+
+export function Header({ variant = "auto" }: HeaderProps) {
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(variant === "solid");
   const [open, setOpen] = useState(false);
+  const solid = variant === "solid" || scrolled;
 
   useEffect(() => {
+    if (variant === "solid") {
+      setScrolled(true);
+      return;
+    }
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [variant, location.pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -30,23 +41,23 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
+    <header className={`header ${solid ? "header--scrolled" : ""}`}>
       <div className="container header__inner">
-        <a href="#ust" className="header__brand" aria-label={`${siteConfig.brand} ana sayfa`}>
+        <Link to="/" className="header__brand" aria-label={`${siteConfig.brand} ana sayfa`}>
           {siteConfig.brand}
-        </a>
+        </Link>
 
         <nav className="header__nav" aria-label="Ana menü">
-          {links.map((link) => (
-            <a key={link.href} href={link.href}>
+          {homeLinks.map((link) => (
+            <Link key={link.href} to={link.href}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a href="#teklif" className="btn btn-primary header__cta">
+        <Link to="/#teklif" className="btn btn-primary header__cta">
           Teklif al
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -67,10 +78,10 @@ export function Header() {
         hidden={!open}
       >
         <nav aria-label="Mobil menü">
-          {links.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+          {homeLinks.map((link) => (
+            <Link key={link.href} to={link.href} onClick={() => setOpen(false)}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://frigogo.com/sitemap.xml
